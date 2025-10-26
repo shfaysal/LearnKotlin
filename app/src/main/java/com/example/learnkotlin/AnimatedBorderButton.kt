@@ -122,7 +122,7 @@ fun AnimatedBrushBorderBoxPreview() {
 @Composable
 fun PreviewAnimatedBorderCard() {
     AnimatedBorderCard(
-        modifier = Modifier.fillMaxWidth().height(80.dp)
+        modifier = Modifier.padding(20.dp).fillMaxWidth().height(80.dp)
     ) {
         Box(
             modifier = Modifier,

@@ -58,5 +58,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation("io.coil-kt:coil-compose:2.1.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.10.2")
+
 
 }
