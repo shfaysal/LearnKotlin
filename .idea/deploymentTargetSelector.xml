@@ -8,9 +8,6 @@
       <SelectionState runConfigName="AnimatedBorderDemo">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="PreviewAnimatedBorderCard">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="DemoAnimatedBorder">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
