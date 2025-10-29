@@ -70,43 +70,45 @@ fun main(){
 //
 //    }
 
-//    runBlocking {
-//        try {
-//            val user = getUser("123")
-//            val posts = getPosts(user.id)
-//            val comments = getComments(posts.first().id)
-//
-//            println("Done! ${comments.size} comments loaded.")
-//        }catch (e : Exception){
-//            println("❌ Error: ${e.message}")
-//        }
-//    }
+    runBlocking {
+        try {
+            val user = getUser("123")
+            println("User loaded: $user")
+            val posts = getPosts(user.id)
+            println("Posts loaded: $posts")
+            val comments = getComments(posts.first().id)
 
-
-
-
-
-    getUser("123") { user, error ->
-        if (error == null && user != null) {
-            getPosts(user.id) { posts, error ->
-                if (posts != null && error == null){
-                    getComments(posts.first().id) { comments, error ->
-                        if (comments != null && error == null){
-                            println("✅ Done! ${comments.size} of ${user.id} comments loaded.")
-                        }else {
-                            println("❌ Error loading comments: ${error?.message}")
-                        }
-
-                    }
-
-                }else {
-                    println("❌ Error loading posts: ${error?.message}")
-                }
-            }
-        } else {
-            println("❌ Error loading user: ${error?.message}")
+            println("Done! ${comments.size} comments loaded.")
+        }catch (e : Exception){
+            println("❌ Error: ${e.message}")
         }
     }
+
+
+
+
+
+//    getUser("123") { user, error ->
+//        if (error == null && user != null) {
+//            getPosts(user.id) { posts, error ->
+//                if (posts != null && error == null){
+//                    getComments(posts.first().id) { comments, error ->
+//                        if (comments != null && error == null){
+//                            println("✅ Done! ${comments.size} of ${user.id} comments loaded.")
+//                        }else {
+//                            println("❌ Error loading comments: ${error?.message}")
+//                        }
+//
+//                    }
+//
+//                }else {
+//                    println("❌ Error loading posts: ${error?.message}")
+//                }
+//            }
+//        } else {
+//            println("❌ Error loading user: ${error?.message}")
+//        }
+//    }
 
 }
 

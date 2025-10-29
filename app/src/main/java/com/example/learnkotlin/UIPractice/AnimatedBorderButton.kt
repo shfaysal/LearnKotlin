@@ -9,6 +9,7 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -72,6 +73,8 @@ fun Modifier.animatedBorder(
     return this
         .clip(shape)
         .padding(borderWidth)
+        .border(borderWidth, Color.Transparent)
+
         .drawWithContent {
             rotate(angle){
                 drawCircle(
@@ -83,14 +86,13 @@ fun Modifier.animatedBorder(
             drawContent()
         }
         .background(color = backGroundColor, shape = shape)
-
 }
 
 @Composable
 fun FlatButton(
     borderColors: List<Color> = listOf(Color.Red, Color.Green,Color.Red, Color.Green,Color.Red, Color.Green),
     backGroundColor: Color = Color.Green,
-    shape: Shape = RoundedCornerShape(8.dp),
+    shape: Shape = RoundedCornerShape(12.dp),
     borderWidth: Dp = 2.dp,
     inactiveColor: List<Color> = listOf(Color.Red, Color.Red,Color.Red, Color.Red,Color.Red, Color.Red),
     animationDuration: Int = 1000,
@@ -141,8 +143,6 @@ fun FlatButton(
                     Text(text)
 
         }
-
-
     }
 }
 
